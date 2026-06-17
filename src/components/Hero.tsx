@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Play, ChevronLeft, ChevronRight, Volume2, Sparkles, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { heroCarouselImages } from "../data";
-import LiquidGlassButton from "./LiquidGlassButton";
 
 interface HeroProps {
   onBookDripClick: () => void;
@@ -66,12 +65,16 @@ export default function Hero({ onBookDripClick }: HeroProps) {
                 <ArrowRight className="w-5 h-5" />
               </button>
               
-              <LiquidGlassButton
+              <button
+                id="hero-watch-experience-btn"
                 onClick={() => setIsVideoModalOpen(true)}
-                className="text-sm sm:text-base"
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-full text-sm sm:text-base tracking-wide transition-all duration-300 flex items-center justify-center space-x-2.5 cursor-pointer"
               >
+                <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center text-white">
+                  <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                </div>
                 <span>Watch the Experience</span>
-              </LiquidGlassButton>
+              </button>
             </div>
 
           </div>

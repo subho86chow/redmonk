@@ -4,7 +4,6 @@ import { popularDripsData, beautyTreatmentsData } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 import { IVDrip, BeautyTreatment } from "../types";
 import GlassCard from "./GlassCard";
-import LiquidGlassButton from "./LiquidGlassButton";
 
 export default function SplitContent() {
   const [activeAccordion, setActiveAccordion] = useState<string | null>("beauty-1");
@@ -228,15 +227,14 @@ export default function SplitContent() {
               </div>
 
               {/* SECONDARY BUTTON - Refactored to premium Glass styling */}
-              <div className="mt-6">
-                <LiquidGlassButton
-                  onClick={() => setIsDripCatalogOpen(true)}
-                  className="text-xs sm:text-sm"
-                >
-                  <span>Explore full menu</span>
-                  <ArrowRight className="w-4 h-4" />
-                </LiquidGlassButton>
-              </div>
+              <button
+                id="explore-full-beauty-menu"
+                onClick={() => setIsDripCatalogOpen(true)}
+                className="w-full bg-white/40 hover:bg-white/60 backdrop-blur-md border border-[#EDB7AF]/40 text-[#CD3134] mt-6 py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm hover:shadow-[#CD3134]/10"
+              >
+                <span>Explore full menu</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
             </GlassCard>
 
