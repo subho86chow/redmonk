@@ -31,12 +31,13 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
 
   return (
     <header className="fixed top-4 left-0 w-full z-50 px-4">
-      <div className="max-w-6xl mx-auto flex items-center">
-        {/* Logo — standalone, left side */}
+      <div className="max-w-6xl mx-auto relative flex items-center justify-center h-12">
+
+        {/* Logo — absolute left, doesn't affect nav centering */}
         <a
           id="brand-logo-link"
           href="#home"
-          className="flex items-center space-x-2.5 group transition-all flex-shrink-0"
+          className="absolute left-0 flex items-center space-x-2.5 group transition-all flex-shrink-0 z-10"
         >
           <div className="w-9 h-9 rounded-full bg-primary-red flex items-center justify-center text-white shadow-md shadow-deep-red/10 group-hover:scale-105 transition-transform duration-300">
             <Activity className="w-5 h-5" />
@@ -51,9 +52,9 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
           </div>
         </a>
 
-        {/* Glass pill navbar — centered nav links */}
+        {/* Glass pill navbar — truly centered */}
         <div
-          className={`flex items-center rounded-full border transition-all duration-300 mx-auto ${
+          className={`flex items-center rounded-full border transition-all duration-300 ${
             isScrolled
               ? "bg-black/20 backdrop-blur-xl border-white/20 shadow-lg"
               : "bg-black/10 backdrop-blur-xl border-white/15 shadow-sm"

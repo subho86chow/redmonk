@@ -51,27 +51,17 @@ export default function SplitContent() {
                   glowColor="neutral"
                   className="group p-6 flex flex-col justify-between cursor-pointer h-full"
                 >
-                  <div className="space-y-3">
-                    {/* Tag & Price */}
-                    <div className="flex justify-between items-center">
-                      <span className="text-[10px] uppercase font-mono tracking-widest text-cta-red bg-cta-red/10 px-2 py-0.5 rounded font-bold">
-                        {drip.tag}
-                      </span>
-                      <span className="text-sm font-mono font-bold text-neutral-900 bg-white/70 shadow-sm border border-neutral-200 px-2.5 py-0.5 rounded-full">
-                        {drip.price}
-                      </span>
-                    </div>
-
+                  <div className="space-y-3"> 
                     {/* Drip Name */}
                     <h4
                       id={`iv-drip-name-${index}`}
-                      className="text-display text-base font-bold text-neutral-900 leading-snug group-hover:text-primary-red transition-colors duration-200"
+                      className="text-display text-base font-bold text-white leading-snug group-hover:text-white transition-colors duration-200"
                     >
                       {drip.name}
                     </h4>
 
                     {/* Drip Description */}
-                    <p className="text-xs text-warm-muted line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-white line-clamp-3 leading-relaxed">
                       {drip.description}
                     </p>
                   </div>
@@ -79,12 +69,11 @@ export default function SplitContent() {
                   {/* Micro list of target benefits */}
                   <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1">
                     {drip.benefits.slice(0, 1).map((b, bIdx) => (
-                      <span key={bIdx} className="text-[10px] font-medium text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded-md flex items-center">
-                        <Check className="w-3 h-3 text-emerald-600 mr-1" />
-                        {b}
+                      <span className="text-sm font-mono font-bold text-neutral-900 bg-white/70 shadow-sm border border-neutral-200 px-2.5 py-0.5 rounded-full">
+                        {drip.price}
                       </span>
                     ))}
-                    <span className="text-[10px] font-mono text-cta-red/80 font-bold ml-auto group-hover:translate-x-1 transition-transform">
+                    <span className="text-[10px] font-mono text-white font-bold ml-auto group-hover:translate-x-1 transition-transform">
                       Details →
                     </span>
                   </div>
@@ -99,18 +88,18 @@ export default function SplitContent() {
                 glowColor="blush"
                 className="group p-6 flex flex-col items-center justify-center text-center cursor-pointer h-full border-dashed border-[#EDB7AF]/80"
               >
-                <div className="w-11 h-11 rounded-full bg-white/80 flex items-center justify-center text-primary-red shadow-sm mb-3 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-11 h-11 rounded-full bg-white/80 flex items-center justify-center text-red shadow-sm mb-3 group-hover:scale-105 transition-transform duration-300">
                   <Plus className="w-5.5 h-5.5 animate-pulse" />
                 </div>
-                <h4 className="text-display text-lg font-extrabold text-primary-red">
+                <h4 className="text-display text-lg font-extrabold text-white">
                   + View All
                 </h4>
-                <p className="text-xs text-warm-muted/85 px-4 mt-2">
+                <p className="text-xs text-white px-4 mt-2">
                   Browse our full inventory of therapeutic vitamin boosts and target detox cocktails.
                 </p>
                 
                 {/* Visual feedback glow hint */}
-                <span className="text-[10px] font-mono tracking-widest text-[#CD3134] font-bold uppercase mt-4 group-hover:underline">
+                <span className="text-[10px] font-mono tracking-widest text-white font-bold uppercase mt-4 group-hover:underline">
                   Open Catalog Menu
                 </span>
               </GlassCard>
@@ -142,13 +131,13 @@ export default function SplitContent() {
             >
               
               <div className="mb-6">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#CD3134] uppercase">
+                <span className="text-xs font-mono font-bold tracking-wider text-white uppercase">
                   Science-Backed Beauty
                 </span>
-                <h4 className="text-display text-lg font-bold text-neutral-900 mt-1">
+                <h4 className="text-display text-lg font-bold text-white mt-1">
                   Beauty, backed by science...
                 </h4>
-                <p className="text-xs text-warm-muted mt-1.5 leading-relaxed">
+                <p className="text-xs text-white mt-1.5 leading-relaxed">
                   Combining photothermal mechanics, neuromodulation, and clean deep dermis hydration for instant luminous cell profiles.
                 </p>
               </div>
@@ -176,11 +165,11 @@ export default function SplitContent() {
                       >
                         <div className="flex flex-col text-left">
                           <span className={`text-[13px] sm:text-[14px] font-bold transition-colors ${
-                            isOpen ? "text-primary-red" : "text-neutral-900"
+                            isOpen ? "text-black" : "text-white"
                           }`}>
                             {treatment.name}
                           </span>
-                          <span className="text-[10px] font-mono text-warm-muted/60 lowercase tracking-wide">
+                          <span className="text-[10px] font-mono text-white lowercase tracking-wide">
                             {treatment.tagline}
                           </span>
                         </div>
@@ -204,7 +193,7 @@ export default function SplitContent() {
                             className="bg-transparent"
                           >
                             <div className="p-4 border-t border-light-blush/10 flex flex-col space-y-3">
-                              <p className="text-xs text-warm-muted leading-relaxed">
+                              <p className="text-xs text-white leading-relaxed">
                                 {treatment.description}
                               </p>
                               

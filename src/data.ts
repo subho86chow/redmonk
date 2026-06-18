@@ -41,7 +41,7 @@ export const statsData: StatItem[] = [
   {
     id: "stat-3",
     value: "30+",
-    label: "Medical grade beauty Treatments"
+    label: "Medical grade Treatments"
   },
   {
     id: "stat-4",
