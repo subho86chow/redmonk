@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import PreFooter from "./components/PreFooter";
 import Footer from "./components/Footer";
 import ShaderGradientBackground from "./components/ShaderGradientBackground";
+import ScrollStroke from "./components/ScrollStroke";
 import AnimatedSection from "./components/AnimatedSection";
 
 export default function App() {
@@ -63,6 +64,9 @@ export default function App() {
 
       {/* Content layered above the gradient */}
       <div className="relative z-10 flex flex-col min-h-screen">
+
+        {/* Scroll-driven stroke animation — moves with content, draws on scroll */}
+        <ScrollStroke />
         {/* Premium Sticky Header */}
         <Header onBookNowClick={handleBookNowScroll} activeSection={activeSection} />
 

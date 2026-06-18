@@ -18,8 +18,8 @@ Red Monk Wellness bridges clinical science and targeted cellular nutrition. The 
 
 ```
 /                       → Landing page (single-page app with 8 anchored sections)
-  #home                 → Hero banner with carousel, headline, CTAs
-  #services             → 4-column clinical services grid
+  #home                 → Hero headline + CTAs + scroll-driven SVG stroke background
+  #services             → 2-column full-width 3D tilt service cards (IV Drips + Vitamin Shots)
   #about                → Stats banner (why Red Monk Wellness)
   #iv-menu              → 65/35 split: popular IV drips + beauty accordion
   #beauty-treatments    → Beauty treatments accordion within iv-menu section
@@ -43,8 +43,8 @@ Fixed pill-shaped floating navbar at `top-4` with glass styling:
 
 ### Flow 1 — Browse & Learn
 
-1. User lands on hero section with auto-rotating carousel
-2. Scrolls to Services grid to understand offerings
+1. User lands on hero section with bold display headline + animated SVG stroke background
+2. Scrolls to Services grid (2 full-width 3D tilt cards) to understand offerings
 3. Reviews Stats banner for credibility markers
 4. Browses IV Drip menu cards (can click for detail modal)
 5. Expands beauty treatment accordion items
@@ -81,10 +81,10 @@ Fixed pill-shaped floating navbar at `top-4` with glass styling:
 ## Features In Scope
 
 - Floating pill-navbar with scroll-aware active section highlighting
-- Hero section with auto-rotating image carousel
-- "Watch the Experience" video modal with lifestyle content
-- 4-column services grid with hover-animated icon containers
-- Stats banner with brand credibility metrics
+- Hero section with bold display headline, Book Now + Watch Experience CTAs
+- Scroll-driven SVG stroke animation (draws progressively as user scrolls)
+- 2-column full-width 3D tilt service cards (IV Drips + Vitamin Shots)
+- Stats banner with count-up animations and brand credibility metrics
 - IV Drip catalog grid with detail modal on card click
 - "+ View All" full catalog overlay with all treatments
 - Beauty treatments accordion with expandable descriptions
@@ -142,6 +142,7 @@ Health-conscious affluent individuals in Mumbai and Kolkata seeking premium IV i
 - Landing page renders correctly on all breakpoints (mobile 375px → desktop 1440px)
 - All sections are navigable via both scroll and navbar links
 - Booking intake form validates required fields and shows success confirmation
-- All interactive elements (accordions, modals, carousel) function without errors
+- All interactive elements (accordions, modals) function without errors
+- Scroll-driven SVG stroke animates smoothly across all scroll positions
 - Design tokens in `index.css` match the visual identity consistently
 - Page loads and renders without console errors

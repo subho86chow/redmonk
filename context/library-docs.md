@@ -129,6 +129,39 @@ import { motion, AnimatePresence } from "motion/react";
 - `initial={false}` on accordions to prevent initial mount animation
 - Transition durations: 0.2s for menus, 0.25s for accordions, 0.6s for carousel
 
+### useScroll + useTransform (scroll-driven path animation)
+
+```tsx
+import { motion, useScroll, useTransform } from "motion/react";
+
+export default function ScrollStroke() {
+  const { scrollYProgress } = useScroll();
+  const pathLength = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
+  return (
+    <svg className="absolute inset-0 pointer-events-none" viewBox="0 0 1278 2319" fill="none">
+      <motion.path
+        d="M876.605 ...2668.89"
+        stroke="#FFFFFF"
+        strokeWidth="30"
+        strokeLinecap="round"
+        fill="none"
+        style={{
+          pathLength,
+          strokeDashoffset: useTransform(pathLength, (v) => 1 - v),
+        }}
+      />
+    </svg>
+  );
+}
+```
+
+**Rules:**
+- SVG must NOT have `width`/`height` HTML attributes — they override CSS `inset-0`
+- Use `absolute inset-0` inside a `relative` parent, not `fixed` — path should scroll with content
+- `useScroll()` without target tracks window-level scroll
+- `pointer-events-none` on SVG so it never blocks interaction
+
 ---
 
 ## Lucide React

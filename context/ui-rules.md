@@ -71,11 +71,10 @@ Four levels used consistently:
 **Hero headline** — main page title
 ```
 font-family: Space Grotesk (.text-display)
-font-size:   text-5xl sm:text-6xl lg:text-7xl
+font-size:   text-5xl sm:text-6xl lg:text-9xl
 font-weight: font-black (900)
 line-height: leading-[0.95]
-style:       italic
-color:       hero-red-text-clip (red gradient text)
+color:       text-white
 ```
 
 **Section headings** — card titles, page section titles

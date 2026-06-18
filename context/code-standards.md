@@ -34,6 +34,8 @@ Implementation rules and conventions for Red Monk Wellness Clinic. The AI agent 
 - Utility/data files: camelCase (`types.ts`, `data.ts`)
 - One component per file — no exceptions
 - UI-only reusable component: `GlassCard.tsx`
+- 3D card primitives in `ui/3d-card.tsx` (CardContainer, CardBody, CardItem)
+- Scroll-driven animation: `ScrollStroke.tsx`
 
 ---
 

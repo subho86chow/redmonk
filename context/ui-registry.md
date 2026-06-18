@@ -40,32 +40,24 @@ After building any component — update this file with the component name, file 
 
 ### Hero
 - **Path:** `src/components/Hero.tsx`
-- **Type:** Hero banner with image carousel
+- **Type:** Hero section with headline, CTAs, and video modal
 - **Section:** `pt-24 pb-16 lg:pt-36 lg:pb-28 bg-transparent`
-- **Layout:** `grid grid-cols-1 lg:grid-cols-12 gap-12` — content (6 cols) + media (6 cols)
-- **Keyword tag:** `inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-wider text-primary-red bg-primary-red/10 border border-primary-red/20 uppercase`
-- **Main heading:** `.text-display` `text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95] italic` with `.hero-red-text-clip`
-- **Sub-heading:** `.text-display` `text-2xl sm:text-3xl font-light text-warm-muted`
-- **Description:** `text-base sm:text-lg text-warm-muted/90 max-w-xl leading-relaxed font-normal`
-- **Value badges:** `flex items-center text-xs font-medium text-warm-muted/90` with `CheckCircle` icons
-- **Primary CTA:** `.hero-red-gradient` `text-white font-bold px-8 py-4 rounded-full text-sm sm:text-base tracking-wide shadow-lg`
-- **Secondary CTA:** `bg-white/30 backdrop-blur-md border border-white/50 hover:bg-white/60 text-primary-red font-semibold px-6 py-4 rounded-full`
-- **Carousel:** `aspect-[4/3] sm:aspect-[16/11] w-full bg-light-blush/20 rounded-2xl sm:rounded-3xl border-4 border-white`
-- **Carousel arrows:** `w-10 h-10 rounded-full bg-white/80 hover:bg-white text-primary-red shadow-md`
-- **Carousel dots:** `w-2.5 h-2.5 rounded-full` (active: `w-7 bg-cta-red`)
+- **Layout:** Single-column flex layout (was previously 12-col grid with image carousel — carousel removed, replaced by ScrollStroke)
+- **Main heading:** `.text-display` `text-5xl sm:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.95] text-white`
+- **Primary CTA:** `bg-cta-red hover:bg-deep-red text-white font-bold px-8 py-2 rounded-full shadow-sm shadow-primary-red/20`
+- **Secondary CTA:** `bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-full`
 - **Video modal:** `fixed inset-0 z-50 bg-black/75 backdrop-blur-sm` with Motion scale animation
 
 ### Services
 - **Path:** `src/components/Services.tsx`
-- **Type:** 4-column services grid
+- **Type:** 2-column full-width 3D tilt service cards
 - **Section:** `py-16 sm:py-24 bg-transparent border-y border-[#EDB7AF]/20`
-- **Section header:** Standard section header pattern (label tag + text-display heading + gradient divider + description)
-- **Grid:** `grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8`
-- **Card wrapper:** `GlassCard` with `intensity="medium"` `glowColor="blush"`
-- **Icon container:** `w-16 h-16 rounded-full bg-[#EDB7AF]/15 group-hover:bg-[#CD3134]` with icon color swap on hover
-- **Card title:** `.text-display text-lg font-bold text-neutral-900 group-hover:text-primary-red`
-- **Card description:** `text-xs sm:text-sm text-[#954A45] leading-relaxed font-light`
-- **Bottom accent:** `w-6 group-hover:w-16 h-0.5 bg-[#CD3134]/30 group-hover:bg-[#CD3134] mt-6 rounded-full`
+- **Container:** Full-width with side padding only (`px-4 sm:px-6 lg:px-8`), no max-width constraint
+- **Section header:** Centered heading `text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white` + description in `text-white/50`
+- **Grid:** `grid grid-cols-1 sm:grid-cols-2 gap-8 w-full` (2 cards: IV Drips + Vitamin Shots)
+- **Cards:** `Service3DCard` — 3D perspective tilt with native glass blurMap/glowMap presets
+- **Card classes:** `relative group/card rounded-2xl p-10 sm:p-12 border overflow-hidden` with `bg-white/10 backdrop-blur-2xl`
+- **Card imagery:** `h-56 sm:h-64 w-full object-cover rounded-xl`
 
 ### StatsBanner
 - **Path:** `src/components/StatsBanner.tsx`
@@ -152,3 +144,13 @@ After building any component — update this file with the component name, file 
 - **Hotline:** `text-neutral-900 hover:text-[#CD3134] font-mono font-bold text-sm sm:text-base`
 - **Disclaimer:** `text-[10px] text-neutral-500`
 - **Heart accent:** `Heart` icon `text-primary-red fill-current animate-pulse`
+
+### ScrollStroke
+- **Path:** `src/components/ScrollStroke.tsx`
+- **Type:** Scroll-driven SVG path animation
+- **Container:** `absolute inset-0 pointer-events-none` within content wrapper (not fixed — scrolls with sections)
+- **SVG attributes:** `viewBox="-30 -300 1278 1319" preserveAspectRatio="none" overflow="visible" fill="none"`
+- **Path:** Exact reference path from temp-component.tsx
+- **Motion style:** `pathLength` from `useTransform(scrollYProgress, [0, 1], [0.5, 1])`, `strokeDashoffset = 1 - pathLength`
+- **Stroke:** `stroke="#FFFFFF" strokeWidth="30" strokeLinecap="round"`
+- **Positioning:** Rendered inside content wrapper (`relative z-10`) before Header — scrolls with all sections

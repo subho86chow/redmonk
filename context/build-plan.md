@@ -62,33 +62,33 @@ Floating pill navbar with scroll-aware active section.
 
 ### 04 Hero Section
 
-Hero banner with carousel, CTAs, and video modal.
+Hero headline with CTAs, scroll-driven SVG stroke, and video modal.
 
 **UI:**
-- Left column: keyword tag, headline (gradient text), sub-headline, description, value badges, two CTAs
-- Right column: image carousel with arrows, dots, overlay badge
+- Single-column layout: bold display headline (SADA SUNDAR RAHO), two CTAs
+- Book Now! CTA (red pill) + Watch the Experience CTA (glass pill)
+- Scroll-driven SVG stroke background drawing progressively on scroll
 - Video modal with dark background, play button, simulated controls
 
 **Logic:**
-- Auto-rotate carousel every 5 seconds (useEffect + setInterval)
-- Manual prev/next navigation
-- Dot indicator navigation
 - `isVideoModalOpen` state for video overlay
 
 ---
 
 ### 05 Services Grid
 
-4-column clinical services cards.
+2-column full-width 3D tilt service cards.
 
 **UI:**
-- Centered section header with label tag, heading, gradient divider, description
-- 4-column responsive grid (1col mobile, 2col tablet, 4col desktop)
-- Each card: circular icon with hover fill animation, title, description, bottom accent line
+- Centered section header with heading + description
+- 2-column responsive grid (1col mobile, 2col desktop), full-width within padded container
+- Each card: 3D perspective tilt on mouse hover via CardContainer/CardBody/CardItem
+- No top icons — imagery, title, description, image, Learn More + Book Now links
+- Glass effect synced with GlassCard presets (blurMap.medium + glowMap.blush)
 
 **Logic:**
-- Icon mapper (`Record<string, LucideIcon>`) to resolve icon names from data
 - Data imported from `servicesData`
+- 3D tilt: CSS perspective + JS mouse tracking (ui/3d-card.tsx)
 
 ---
 
@@ -211,4 +211,20 @@ Footer with link columns, back-to-top, intake hotline.
 | 1     | Foundation & Layout | 2        |
 | 2     | Core Sections       | 7        |
 | 3     | Conversion & Footer | 2        |
-| **Total** |                | **11**   |
+| 4     | Scroll SVG Stroke   | 1        |
+| **Total** |                | **12**   |
+
+### 12 ScrollStroke
+
+Scroll-driven SVG path animation.
+
+**UI:**
+- SVG with exact reference path from temp-component.tsx
+- Absolute-positioned within content wrapper — moves with sections on scroll
+- White stroke (#FFFFFF), 30px stroke-width, strokeLinecap round
+- Pointer-events none — never blocks interaction
+
+**Logic:**
+- `useScroll()` (window-level) produces scrollYProgress
+- `useTransform` maps progress to pathLength (0.5→1)
+- `motion.path` applies pathLength + strokeDashoffset for progressive draw

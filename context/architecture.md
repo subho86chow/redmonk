@@ -9,7 +9,7 @@
 | Framework    | React 19 (no framework)       | Component-based UI                     |
 | Build        | Vite 6                        | Dev server and production bundling     |
 | Styling      | Tailwind CSS v4 + @tailwindcss/vite | Utility-first CSS with `@theme` tokens |
-| Animation    | Motion (Framer Motion) v12    | Declarative animations and transitions |
+| Animation    | Motion (Framer Motion) v12       | Declarative animations, useScroll/useTransform |
 | Icons        | Lucide React v0.546           | Consistent SVG icon library            |
 | Fonts        | Google Fonts (3 families)     | Inter, Space Grotesk, JetBrains Mono   |
 | Language     | TypeScript 5.8 (strict mode)  | Type safety throughout                 |
@@ -30,15 +30,22 @@
 │   ├── data.ts                    # Static content data (services, team, testimonials, etc.)
 │   └── components/
 │       ├── Header.tsx             # Floating pill navbar with active section tracking
-│       ├── Hero.tsx               # Hero banner with carousel, CTAs, video modal
-│       ├── Services.tsx           # 4-column clinical services grid
-│       ├── StatsBanner.tsx        # Brand credibility statistics
+│       ├── Hero.tsx               # Hero headline + CTAs + video modal (no carousel)
+│       ├── Services.tsx           # 2-column full-width 3D tilt service cards
+│       ├── Service3DCard.tsx      # 3D perspective glass card with blurMap/glowMap
+│       ├── ScrollStroke.tsx       # Scroll-driven SVG path (useScroll + motion.path)
+│       ├── StatsBanner.tsx        # Brand credibility statistics with CountUp
 │       ├── SplitContent.tsx       # 65/35 layout: IV drips grid + beauty accordion
 │       ├── MeetTeam.tsx           # Medical team profile grid with expandable bios
 │       ├── Testimonials.tsx       # Patient review cards with star ratings
 │       ├── PreFooter.tsx          # Booking form, social platforms, clinic maps
 │       ├── Footer.tsx             # Footer with links, back-to-top, hotline
-│       └── GlassCard.tsx          # Reusable card component (intensity + glow variants)
+│       ├── GlassCard.tsx          # Reusable card component (intensity + glow variants)
+│       ├── ShaderGradientBackground.tsx  # Fixed WebGL waterPlane animated bg
+│       ├── AnimatedSection.tsx    # Fade-up on scroll/mount wrapper
+│       ├── CountUp.tsx            # Animated number counter (useInView trigger)
+│       └── ui/
+│           └── 3d-card.tsx        # CardContainer/CardBody/CardItem 3D primitives
 ├── index.html                     # HTML entry point
 ├── package.json                   # Dependencies and scripts
 ├── tsconfig.json                  # TypeScript configuration
@@ -97,6 +104,20 @@ App.tsx handleScroll() checks offsets of section IDs
 Sets activeSection state
         ↓
 Header receives activeSection prop, highlights matching nav link
+```
+
+### Flow 4 — Scroll-Driven SVG Stroke
+
+```
+window scroll event fires
+        ↓
+useScroll() produces scrollYProgress (0→1)
+        ↓
+useTransform maps to pathLength
+        ↓
+motion.path applies pathLength + strokeDashoffset
+        ↓
+SVG path draws progressively as user scrolls, moves with content
 ```
 
 ---

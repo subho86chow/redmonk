@@ -3,7 +3,7 @@
 # Progress Tracker
 
 **Last updated:** 2026-06-18
-**Current phase:** 3D Card & Glass Polish (complete)
+**Current phase:** Scroll-Driven SVG Stroke (complete)
 **Overall status:** Active Development
 
 ---
@@ -15,10 +15,10 @@
 - [x] Design system: 8 brand colors, 3 font families, custom CSS utilities
 - [x] GlassCard reusable component (intensity + glow variants)
 - [x] Header: split logo (left) + centered glass pill nav (no Book Now CTA)
-- [x] Hero: Book Now! CTA matching navbar style, shader gradient background
+- [x] Hero: Book Now! + Watch Experience CTAs — carousel removed, replaced by ScrollStroke SVG
 - [x] ShaderGradientBackground: `@shadergradient/react` waterPlane full-page animated bg
-- [x] Services: 2-column 3D tilt card grid (IV Drips + Vitamin Shots only)
-- [x] Service3DCard: 3D tilt with frosted glass effect (blurMap + glowMap + interactive)
+- [x] Services: 2-column full-width 3D tilt card grid, icons removed from card tops
+- [x] Service3DCard: 3D tilt, glass effect synced with GlassCard presets (blurMap + glowMap + interactiveStyles)
 - [x] 3D card system: CardContainer/CardBody/CardItem primitives in ui/3d-card.tsx
 - [x] StatsBanner: CountUp animated stat numbers on viewport entry
 - [x] SplitContent: 65/35 IV drips grid + beauty treatments accordion
@@ -38,6 +38,7 @@
 - [x] All 9 context files populated
 - [x] vercel.json created for Vite SPA deployment
 - [x] liquid-glass-react tried and reverted — caused issues, fully removed
+- [x] ScrollStroke: scroll-driven SVG path — uses exact reference path from temp-component.tsx, absolute within wrapper, draws 0→1 on scroll, moves with sections
 
 ## In Progress
 
@@ -84,6 +85,23 @@
 ---
 
 ## Session Notes
+
+**2026-06-18 (afternoon)**
+- Added `ScrollStroke.tsx`: scroll-driven SVG path animation using useScroll + motion.path
+  - Uses exact SVG path from temp-component.tsx reference
+  - pathLength mapped 0→1 over full window scroll
+  - Absolute-positioned within content wrapper (not fixed) — scrolls naturally with sections
+  - pointer-events-none — never blocks interaction
+  - Fully typed with motion/react (v12.23.24)
+- Hero: removed image carousel entirely — simpler single-column headline + CTAs
+- Service3DCard: glass effect presets synced exactly with GlassCard (blurMap + glowMap values)
+- Services: now full-width (removed max-w-2xl constraint from grid), 2 cards only
+- Service3DCard: icons removed from card tops per design request
+- Debugging fix: removed width/height HTML attributes from SVG (they override CSS inset-0)
+- CSS size dropped from 63.56 kB → 60.45 kB (carousel styles removed)
+
+**2026-06-18 (morning)**
+- Glass Card sync + Service section polish
 
 **2026-06-17**
 - Context files populated: all 9 context files filled with real project data extracted from the codebase

@@ -15,7 +15,7 @@ export default function ShaderGradientBackground() {
 <ShaderGradient
   animate="on"
   axesHelper="off"
-  brightness={0.9}
+  brightness={0.7}
   cAzimuthAngle={18}
   cDistance={2.7}
   cPolarAngle={92}
