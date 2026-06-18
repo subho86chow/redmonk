@@ -1,7 +1,20 @@
 import { Star, Quote, Heart } from "lucide-react";
+import { motion } from "motion/react";
 import { testimonialsData } from "../data";
 import { Testimonial } from "../types";
 import GlassCard from "./GlassCard";
+
+const EASE_OUT = [0.22, 0.61, 0.36, 1] as const;
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_OUT } },
+};
 
 export default function Testimonials() {
   return (
@@ -25,13 +38,17 @@ export default function Testimonials() {
         </div>
 
         {/* 4-column Grid of Rectangular Testimonial Cards */}
-        <div
+        <motion.div
           id="testimonials-grid"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={containerVariants}
         >
           {testimonialsData.map((review: Testimonial, index: number) => (
+            <motion.div key={review.id} variants={cardVariants}>
             <GlassCard
-              key={review.id}
               id={`testimonial-card-${index}`}
               intensity="medium"
               glowColor="blush"
@@ -58,7 +75,7 @@ export default function Testimonials() {
                 {/* Patient Quote / Review Text */}
                 <p
                   id={`testimonial-text-${index}`}
-                  className="text-xs sm:text-[13px] text-white/80 leading-relaxed font-light italic"
+                  className="text-xs sm:text-[13px] text-neutral-700 leading-relaxed font-light italic"
                 >
                   "{review.text}"
                 </p>
@@ -71,7 +88,7 @@ export default function Testimonials() {
                   <div className="flex items-center space-x-1">
                     <span
                       id={`testimonial-author-${index}`}
-                      className="text-xs font-bold text-white"
+                      className="text-xs font-bold text-neutral-900"
                     >
                       {review.patientName}
                     </span>
@@ -84,14 +101,15 @@ export default function Testimonials() {
                   </span>
                 </div>
 
-                <span className="text-[10px] font-mono text-white/30">
+                <span className="text-[10px] font-mono text-neutral-400">
                   {review.date}
                 </span>
               </div>
 
             </GlassCard>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

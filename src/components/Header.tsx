@@ -55,8 +55,8 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
         <div
           className={`flex items-center rounded-full border transition-all duration-300 mx-auto ${
             isScrolled
-              ? "bg-black/10 backdrop-blur-xl border-white/20 shadow-lg"
-              : "bg-black/5 backdrop-blur-lg border-white/15 shadow-sm"
+              ? "bg-black/20 backdrop-blur-xl border-white/20 shadow-lg"
+              : "bg-black/10 backdrop-blur-xl border-white/15 shadow-sm"
           }`}
         >
           {/* Desktop nav links */}

@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import PreFooter from "./components/PreFooter";
 import Footer from "./components/Footer";
 import ShaderGradientBackground from "./components/ShaderGradientBackground";
+import AnimatedSection from "./components/AnimatedSection";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -67,26 +68,33 @@ export default function App() {
 
         {/* Main Structural Flow */}
         <main className="flex-grow">
-          {/* Interactive Hero Banner */}
-          <Hero onBookDripClick={handleBookNowScroll} />
+          <AnimatedSection aboveFold delay={0.2}>
+            <Hero onBookDripClick={handleBookNowScroll} />
+          </AnimatedSection>
 
-          {/* 4-Column Clinical Services Grid */}
-          <Services />
+          <AnimatedSection delay={0.05}>
+            <Services />
+          </AnimatedSection>
 
-          {/* Brand Core Values Statistics Banner */}
-          <StatsBanner />
+          <AnimatedSection delay={0.1}>
+            <StatsBanner />
+          </AnimatedSection>
 
-          {/* Asymmetrical 65/35 Split: IV menu and Beauty accordions */}
-          <SplitContent />
+          <AnimatedSection delay={0.0}>
+            <SplitContent />
+          </AnimatedSection>
 
-          {/* Certified Physician & Aesthetic Team Grid */}
-          <MeetTeam />
+          <AnimatedSection delay={0.05}>
+            <MeetTeam />
+          </AnimatedSection>
 
-          {/* Soft-shadowed Review Journal Grid */}
-          <Testimonials />
+          <AnimatedSection delay={0.1}>
+            <Testimonials />
+          </AnimatedSection>
 
-          {/* PreFooter Booking Intake form, Social grids, Maps */}
-          <PreFooter />
+          <AnimatedSection delay={0.05}>
+            <PreFooter />
+          </AnimatedSection>
         </main>
 
         {/* Footer clearances & glow-wave bottom border ribbons */}

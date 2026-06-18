@@ -2,9 +2,9 @@
 
 # Progress Tracker
 
-**Last updated:** 2026-06-17
-**Current phase:** Complete — Landing Page
-**Overall status:** Complete / Maintenance
+**Last updated:** 2026-06-18
+**Current phase:** 3D Card & Glass Polish (complete)
+**Overall status:** Active Development
 
 ---
 
@@ -14,15 +14,19 @@
 - [x] Tailwind CSS v4 configured with `@theme` design tokens
 - [x] Design system: 8 brand colors, 3 font families, custom CSS utilities
 - [x] GlassCard reusable component (intensity + glow variants)
-- [x] Header: floating pill navbar with scroll-aware active section highlighting
-- [x] Hero: carousel with auto-rotation, CTAs, video modal placeholder
-- [x] Services: 4-column grid with hover-animated icon containers
-- [x] StatsBanner: credibility statistics with icons in GlassCard
+- [x] Header: split logo (left) + centered glass pill nav (no Book Now CTA)
+- [x] Hero: Book Now! CTA matching navbar style, shader gradient background
+- [x] ShaderGradientBackground: `@shadergradient/react` waterPlane full-page animated bg
+- [x] Services: 2-column 3D tilt card grid (IV Drips + Vitamin Shots only)
+- [x] Service3DCard: 3D tilt with frosted glass effect (blurMap + glowMap + interactive)
+- [x] 3D card system: CardContainer/CardBody/CardItem primitives in ui/3d-card.tsx
+- [x] StatsBanner: CountUp animated stat numbers on viewport entry
 - [x] SplitContent: 65/35 IV drips grid + beauty treatments accordion
 - [x] SplitContent: "+ View All" full catalog overlay with all treatments
 - [x] SplitContent: individual drip detail modal with pricing and benefits
-- [x] MeetTeam: 4-column team grid with expandable bio cards
-- [x] Testimonials: 4-column patient review cards with star ratings
+- [x] MeetTeam: team grid with staggered scroll animations
+- [x] Testimonials: review grid with staggered scroll animations
+- [x] AnimatedSection: fade-up on scroll/mount wrapper for all below-fold sections
 - [x] PreFooter: booking intake form with validation and success confirmation
 - [x] PreFooter: social platforms section with newsletter signup
 - [x] PreFooter: clinic location cards (Mumbai + Kolkata) with route links
@@ -32,10 +36,12 @@
 - [x] Motion/AnimatePresence animations on all interactive elements
 - [x] Full responsive design (mobile 375px → desktop 1440px)
 - [x] All 9 context files populated
+- [x] vercel.json created for Vite SPA deployment
+- [x] liquid-glass-react tried and reverted — caused issues, fully removed
 
 ## In Progress
 
-- [ ] None — all planned features complete
+- [ ] None — 3D glass card implementation complete
 
 ## Up Next
 

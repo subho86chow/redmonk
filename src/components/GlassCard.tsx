@@ -24,9 +24,9 @@ export default function GlassCard({
   // Define backdrop blur and backgrounds based on requested intensity
   // Dark glass effect matching navbar: translucent black with backdrop blur
   const blurMap = {
-    low: "bg-black/5 backdrop-blur-lg border-white/15",
-    medium: "bg-black/10 backdrop-blur-xl border-white/20",
-    high: "bg-black/15 backdrop-blur-xl border-white/25",
+    low: "bg-white/20 backdrop-blur-xl border-white/30",
+    medium: "bg-white/10 backdrop-blur-2xl border-white/40",
+    high: "bg-white/20 backdrop-blur-2xl border-white/30",
   };
 
   // Define glow colors — subtle shadow depth
@@ -48,7 +48,8 @@ export default function GlassCard({
       className={`
         relative 
         rounded-2xl 
-        border 
+        border-[0.1px]
+        border-amber-50
         ${blurMap[intensity]} 
         ${glowMap[glowColor]} 
         ${interactiveStyles} 

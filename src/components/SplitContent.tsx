@@ -57,7 +57,7 @@ export default function SplitContent() {
                       <span className="text-[10px] uppercase font-mono tracking-widest text-cta-red bg-cta-red/10 px-2 py-0.5 rounded font-bold">
                         {drip.tag}
                       </span>
-                      <span className="text-sm font-mono font-bold text-white bg-white/10 shadow-sm border border-white/10 px-2.5 py-0.5 rounded-full">
+                      <span className="text-sm font-mono font-bold text-neutral-900 bg-white/70 shadow-sm border border-neutral-200 px-2.5 py-0.5 rounded-full">
                         {drip.price}
                       </span>
                     </div>
@@ -65,13 +65,13 @@ export default function SplitContent() {
                     {/* Drip Name */}
                     <h4
                       id={`iv-drip-name-${index}`}
-                      className="text-display text-base font-bold text-white leading-snug group-hover:text-primary-red transition-colors duration-200"
+                      className="text-display text-base font-bold text-neutral-900 leading-snug group-hover:text-primary-red transition-colors duration-200"
                     >
                       {drip.name}
                     </h4>
 
                     {/* Drip Description */}
-                    <p className="text-xs text-white/50 line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-warm-muted line-clamp-3 leading-relaxed">
                       {drip.description}
                     </p>
                   </div>
@@ -79,7 +79,7 @@ export default function SplitContent() {
                   {/* Micro list of target benefits */}
                   <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1">
                     {drip.benefits.slice(0, 1).map((b, bIdx) => (
-                      <span key={bIdx} className="text-[10px] font-medium text-white/70 bg-white/10 px-2 py-0.5 rounded-md flex items-center">
+                      <span key={bIdx} className="text-[10px] font-medium text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded-md flex items-center">
                         <Check className="w-3 h-3 text-emerald-600 mr-1" />
                         {b}
                       </span>
@@ -105,7 +105,7 @@ export default function SplitContent() {
                 <h4 className="text-display text-lg font-extrabold text-primary-red">
                   + View All
                 </h4>
-                <p className="text-xs text-white/50 px-4 mt-2">
+                <p className="text-xs text-warm-muted/85 px-4 mt-2">
                   Browse our full inventory of therapeutic vitamin boosts and target detox cocktails.
                 </p>
                 
@@ -145,10 +145,10 @@ export default function SplitContent() {
                 <span className="text-xs font-mono font-bold tracking-wider text-[#CD3134] uppercase">
                   Science-Backed Beauty
                 </span>
-                <h4 className="text-display text-lg font-bold text-white mt-1">
+                <h4 className="text-display text-lg font-bold text-neutral-900 mt-1">
                   Beauty, backed by science...
                 </h4>
-                <p className="text-xs text-white/50 mt-1.5 leading-relaxed">
+                <p className="text-xs text-warm-muted mt-1.5 leading-relaxed">
                   Combining photothermal mechanics, neuromodulation, and clean deep dermis hydration for instant luminous cell profiles.
                 </p>
               </div>
@@ -161,33 +161,33 @@ export default function SplitContent() {
                     <div
                       key={treatment.id}
                       id={`beauty-accordion-item-${index}`}
-                      className={`rounded-xl border transition-all duration-300 overflow-hidden ${
+                        className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                         isOpen
-                          ? "border-white/20 bg-transparent shadow-sm"
-                          : "border-white/10 bg-transparent hover:border-white/30"
+                          ? "border-neutral-200 bg-transparent shadow-sm"
+                          : "border-neutral-100 bg-transparent hover:border-neutral-300"
                       }`}
                     >
                       {/* Accordion header wrapper with + / - trigger */}
                       <button
                         onClick={() => toggleAccordion(treatment.id)}
                         className={`w-full text-left px-4 py-3 flex justify-between items-center transition-colors duration-200 cursor-pointer ${
-                          isOpen ? "bg-white/5" : ""
+                          isOpen ? "bg-neutral-50" : ""
                         }`}
                       >
                         <div className="flex flex-col text-left">
                           <span className={`text-[13px] sm:text-[14px] font-bold transition-colors ${
-                            isOpen ? "text-primary-red" : "text-white/80"
+                            isOpen ? "text-primary-red" : "text-neutral-900"
                           }`}>
                             {treatment.name}
                           </span>
-                          <span className="text-[10px] font-mono text-white/40 lowercase tracking-wide">
+                          <span className="text-[10px] font-mono text-warm-muted/60 lowercase tracking-wide">
                             {treatment.tagline}
                           </span>
                         </div>
                         <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all ${
                           isOpen
                             ? "bg-primary-red text-white rotate-180"
-                            : "bg-white/10 text-white/70"
+                            : "bg-neutral-100 text-neutral-700"
                         }`}>
                           {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
                         </div>
@@ -204,7 +204,7 @@ export default function SplitContent() {
                             className="bg-transparent"
                           >
                             <div className="p-4 border-t border-light-blush/10 flex flex-col space-y-3">
-                              <p className="text-xs text-white/60 leading-relaxed">
+                              <p className="text-xs text-warm-muted leading-relaxed">
                                 {treatment.description}
                               </p>
                               

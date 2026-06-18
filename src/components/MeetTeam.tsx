@@ -5,6 +5,18 @@ import { TeamMember } from "../types";
 import { motion, AnimatePresence } from "motion/react";
 import GlassCard from "./GlassCard";
 
+const EASE_OUT = [0.22, 0.61, 0.36, 1] as const;
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_OUT } },
+};
+
 export default function MeetTeam() {
   const [expandedMemberId, setExpandedMemberId] = useState<string | null>(null);
 
@@ -33,15 +45,19 @@ export default function MeetTeam() {
         </div>
 
         {/* 4-column Grid of Profile Cards */}
-        <div
+        <motion.div
           id="team-grid"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={containerVariants}
         >
           {teamData.map((member: TeamMember, index: number) => {
             const isExpanded = expandedMemberId === member.id;
             return (
+              <motion.div key={member.id} variants={cardVariants}>
               <GlassCard
-                key={member.id}
                 id={`team-card-${index}`}
                 intensity="medium"
                 glowColor="blush"
@@ -73,7 +89,7 @@ export default function MeetTeam() {
                 {/* Name */}
                 <h3
                   id={`team-member-name-${index}`}
-                  className="text-display text-base sm:text-lg font-bold text-white group-hover:text-primary-red transition-colors"
+                  className="text-display text-base sm:text-lg font-bold text-neutral-900 group-hover:text-primary-red transition-colors"
                 >
                   {member.name}
                 </h3>
@@ -87,7 +103,7 @@ export default function MeetTeam() {
                 </p>
 
                 {/* Mini clinical verify bullet */}
-                <div className="flex items-center space-x-1 mt-1 text-[10px] font-mono text-white/40">
+                <div className="flex items-center space-x-1 mt-1 text-[10px] font-mono text-warm-muted/60">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Verified Practitioner</span>
                 </div>
@@ -102,16 +118,16 @@ export default function MeetTeam() {
                       className="overflow-hidden w-full text-center"
                     >
                       <div className="pt-4 mt-4 border-t border-white/10 space-y-3">
-                        <p className="text-xs text-white/50 leading-relaxed font-light">
+                        <p className="text-xs text-warm-muted leading-relaxed font-light">
                           {member.bio}
                         </p>
                         
                         {/* Interactive contact shortcut keys */}
                         <div className="flex justify-center space-x-3 pt-2">
-                          <a href="#" className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 transition-colors">
+                          <a href="#" className="p-1.5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-600 transition-colors">
                             <Mail className="w-3.5 h-3.5" />
                           </a>
-                          <a href="#" className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 transition-colors">
+                          <a href="#" className="p-1.5 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-600 transition-colors">
                             <Linkedin className="w-3.5 h-3.5" />
                           </a>
                         </div>
@@ -130,7 +146,7 @@ export default function MeetTeam() {
                   className={`absolute bottom-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
                     isExpanded
                       ? "bg-primary-red border-primary-red text-white"
-                      : "bg-white/80 border-[#EDB7AF]/30 text-white/60 hover:bg-primary-red hover:text-white"
+                      : "bg-white/80 border-[#EDB7AF]/30 text-warm-muted hover:bg-primary-red hover:text-white"
                   }`}
                   aria-label="Expand bio details"
                 >
@@ -138,9 +154,10 @@ export default function MeetTeam() {
                 </button>
 
               </GlassCard>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>

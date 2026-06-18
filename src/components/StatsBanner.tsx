@@ -1,14 +1,28 @@
 import { ShieldCheck, Crosshair, Sparkles, Award } from "lucide-react";
+import { motion } from "motion/react";
 import { statsData } from "../data";
 import GlassCard from "./GlassCard";
+import CountUp from "./CountUp";
+
+const EASE_OUT = [0.22, 0.61, 0.36, 1] as const;
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_OUT } },
+};
 
 export default function StatsBanner() {
   // Map icons to statistical items to add rich visual details
   const featureIcons = [
-    <ShieldCheck className="w-5 h-5 text-primary-red/70 group-hover:text-primary-red transition-colors" />,
-    <Crosshair className="w-5 h-5 text-primary-red/70 group-hover:text-primary-red transition-colors" />,
-    <Sparkles className="w-5 h-5 text-primary-red/70 group-hover:text-primary-red transition-colors" />,
-    <Award className="w-5 h-5 text-primary-red/70 group-hover:text-primary-red transition-colors" />,
+    <ShieldCheck className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
+    <Crosshair className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
+    <Sparkles className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
+    <Award className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
   ];
 
   return (
@@ -46,10 +60,17 @@ export default function StatsBanner() {
             <div className="border-r border-white/10 h-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={containerVariants}
+          >
             {statsData.map((stat, idx) => (
-              <div
+              <motion.div
                 key={stat.id}
+                variants={itemVariants}
                 id={`stat-item-box-${idx}`}
                 className="flex flex-col items-center text-center group"
               >
@@ -59,26 +80,22 @@ export default function StatsBanner() {
                 </div>
 
                 {/* Number / Stat Value (Large, prominent, and colored in primary-red) */}
-                <span
-                  id={`stat-value-text-${idx}`}
-                  className="font-mono text-4xl sm:text-5xl font-extrabold text-primary-red tracking-tight leading-none mb-2"
-                >
-                  {stat.value}
-                </span>
-
-                {/* Subtext divider line */}
-                <div className="w-8 h-0.5 bg-soft-coral/40 group-hover:w-12 transition-all duration-300 my-1 rounded-full" />
+                <CountUp
+                  value={stat.value}
+                  className="font-mono text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-none mb-2"
+                  duration={2000}
+                />
 
                 {/* Descriptive sub-text (Smaller underneath) */}
                 <span
                   id={`stat-label-text-${idx}`}
-                  className="text-xs sm:text-sm font-semibold text-white/60 tracking-wide capitalize mt-1 max-w-[200px]"
+                  className="text-xs sm:text-sm font-semibold text-white tracking-wide capitalize mt-1 max-w-[200px]"
                 >
                   {stat.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </GlassCard>
 

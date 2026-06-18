@@ -104,7 +104,7 @@ export default function PreFooter() {
                       </div>
                     )}
                     <div>
-                      <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                      <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                         Full Name <span className="text-primary-red">*</span>
                       </label>
                       <input
@@ -113,13 +113,13 @@ export default function PreFooter() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. Shreya Sharma"
-                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red ring-cta-red/10 transition-all font-sans"
+                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red ring-cta-red/10 transition-all font-sans"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                        <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                           Phone Number <span className="text-primary-red">*</span>
                         </label>
                         <input
@@ -128,11 +128,11 @@ export default function PreFooter() {
                           value={formData.mobilePhone}
                           onChange={(e) => setFormData({ ...formData, mobilePhone: e.target.value })}
                           placeholder="e.g. +91 98765 43210"
-                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all font-sans"
+                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all font-sans"
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                        <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                           Email Address
                         </label>
                         <input
@@ -140,20 +140,20 @@ export default function PreFooter() {
                           value={formData.emailAdd}
                           onChange={(e) => setFormData({ ...formData, emailAdd: e.target.value })}
                           placeholder="e.g. name@domain.com"
-                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all font-sans"
+                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all font-sans"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                        <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                           Select Service
                         </label>
                         <select
                           value={formData.selectedService}
                           onChange={(e) => setFormData({ ...formData, selectedService: e.target.value })}
-                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all"
+                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all"
                         >
                           <option>Myers' Cleanse IV (The Monk's Elixir)</option>
                           <option>NAD+ Cellular Longevity (Premium)</option>
@@ -164,13 +164,13 @@ export default function PreFooter() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                        <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                           Clinic Location
                         </label>
                         <select
                           value={formData.preferredLocation}
                           onChange={(e) => setFormData({ ...formData, preferredLocation: e.target.value })}
-                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all"
+                          className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all"
                         >
                           <option>Mumbai - Bandra West</option>
                           <option>Kolkata - Salt Lake Sec V</option>
@@ -179,7 +179,7 @@ export default function PreFooter() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                      <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                         Select Appointment Date <span className="text-primary-red">*</span>
                       </label>
                       <input
@@ -187,12 +187,12 @@ export default function PreFooter() {
                         required
                         value={formData.preferredDate}
                         onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all"
+                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono uppercase text-white/60 font-bold mb-1">
+                      <label className="block text-[11px] font-mono uppercase text-warm-muted/80 font-bold mb-1">
                         Clinician Notes (Allergies or target goals)
                       </label>
                       <textarea
@@ -200,7 +200,7 @@ export default function PreFooter() {
                         value={formData.notes}
                         onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                         placeholder="State any specific health goals or vascular concerns..."
-                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-cta-red transition-all font-sans resize-none"
+                        className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-light-blush/30 bg-white text-neutral-900 placeholder:text-neutral-300 focus:outline-none focus:border-cta-red transition-all font-sans resize-none"
                       />
                     </div>
 
@@ -212,7 +212,7 @@ export default function PreFooter() {
                       <span>Submit Secure Booking Intake</span>
                     </button>
                     
-                    <p className="text-[10px] text-center text-white/30">
+                    <p className="text-[10px] text-center text-neutral-400">
                       🔒 HIPPA compliant. We protect client physiological parameters.
                     </p>
                   </motion.form>
@@ -227,31 +227,31 @@ export default function PreFooter() {
                       <CheckCircle className="w-10 h-10" />
                     </div>
                     <div>
-                      <h4 className="text-display text-lg font-bold text-white">
+                      <h4 className="text-display text-lg font-bold text-neutral-900">
                         Vascular Intake Successful!
                       </h4>
-                      <p className="text-xs text-white/60 mt-2 leading-relaxed">
-                        Thank you, <strong className="text-white">{formData.fullName}</strong>. Your clinical request has been registered under medical priority queue.
+                      <p className="text-xs text-warm-muted mt-2 leading-relaxed">
+                        Thank you, <strong className="text-neutral-950">{formData.fullName}</strong>. Your clinical request has been registered under medical priority queue.
                       </p>
                     </div>
 
-                    <div className="bg-white/5 px-5 py-4 rounded-xl border border-white/10 max-w-sm w-full divide-y divide-white/10 space-y-1">
+                    <div className="bg-neutral-50 px-5 py-4 rounded-xl border border-neutral-100 max-w-sm w-full divide-y divide-neutral-100 space-y-1">
                       <div className="flex justify-between items-center text-xs py-1.5">
-                        <span className="text-white/50">Security Slip ID:</span>
+                        <span className="text-neutral-500">Security Slip ID:</span>
                         <strong className="font-mono text-primary-red">{bookingConfirmation}</strong>
                       </div>
                       <div className="flex justify-between items-center text-xs py-1.5">
-                        <span className="text-white/50">Clinic Choice:</span>
-                        <span className="font-semibold text-white text-right">{formData.preferredLocation}</span>
+                        <span className="text-neutral-500">Clinic Choice:</span>
+                        <span className="font-semibold text-neutral-950 text-right">{formData.preferredLocation}</span>
                       </div>
                       <div className="flex justify-between items-center text-xs py-1.5">
-                        <span className="text-white/50">Scheduled Date:</span>
-                        <span className="font-mono font-semibold text-white">{formData.preferredDate}</span>
+                        <span className="text-neutral-500">Scheduled Date:</span>
+                        <span className="font-mono font-semibold text-neutral-950">{formData.preferredDate}</span>
                       </div>
                     </div>
 
-                    <p className="text-[11px] text-white/50 max-w-xs leading-normal">
-                      A certified Aesthetic Practitioner will dial <strong className="text-white">{formData.mobilePhone}</strong> shortly to align pre-Screen testing requirements.
+                    <p className="text-[11px] text-warm-muted max-w-xs leading-normal">
+                      A certified Aesthetic Practitioner will dial <strong className="text-neutral-950">{formData.mobilePhone}</strong> shortly to align pre-Screen testing requirements.
                     </p>
 
                     <button
@@ -302,7 +302,7 @@ export default function PreFooter() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-primary-red flex items-center justify-center border border-white/10 hover:border-cta-red/30 shadow-sm transition-all duration-300 hover:scale-115 cursor-pointer hover:shadow-md hover:shadow-deep-red/10 group"
+                    className="w-12 h-12 rounded-full bg-light-blush/10 hover:bg-white text-warm-muted hover:text-primary-red flex items-center justify-center border border-white/10 hover:border-cta-red/30 shadow-sm transition-all duration-300 hover:scale-115 cursor-pointer hover:shadow-md hover:shadow-deep-red/10 group"
                   >
                     <item.icon className="w-5 h-5 group-hover:stroke-primary-red group-hover:scale-105 transition-transform" />
                   </a>
@@ -315,10 +315,10 @@ export default function PreFooter() {
                 </span>
                 
                 <div className="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-                  <span className="text-[14px] font-bold text-white block leading-tight">
+                  <span className="text-[14px] font-bold text-neutral-900 block leading-tight">
                     34,200+ Subscriber base
                   </span>
-                  <p className="text-[10px] text-white/50 leading-snug mt-1.5">
+                  <p className="text-[10px] text-warm-muted leading-snug mt-1.5">
                     Subscribe to receive cellular biohacking protocols directly from our chief medical office.
                   </p>
                   
@@ -328,7 +328,7 @@ export default function PreFooter() {
                       type="email"
                       required
                       placeholder="Email info..."
-                      className="bg-white/10 border border-white/20 text-[10px] px-2 py-1.5 rounded-lg focus:outline-none w-full text-white placeholder:text-white/30"
+                      className="bg-white border border-neutral-200 text-[10px] px-2 py-1.5 rounded-lg focus:outline-none w-full text-neutral-900 placeholder:text-neutral-300"
                     />
                     <button type="submit" className="bg-[#CD3134] text-white px-2.5 py-1.5 rounded-lg text-[10px] font-bold cursor-pointer">
                       Join
@@ -377,17 +377,17 @@ export default function PreFooter() {
                       <MapPin className="w-4.5 h-4.5" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white tracking-wide">
+                      <h4 className="text-xs font-bold text-neutral-900 tracking-wide">
                         Google Map Mumbai
                       </h4>
-                      <p className="text-[11px] text-white/50 mt-0.5 font-light leading-relaxed">
+                      <p className="text-[11px] text-warm-muted mt-0.5 font-light leading-relaxed">
                         Bandra Clinic: Hill View Chambers, Off Carter Road, Bandra West, Mumbai - 400050.
                       </p>
                     </div>
                   </div>
 
                   {/* Micro clinic details */}
-                  <div className="flex flex-wrap gap-2 text-[10px] text-white/50 pt-1 border-t border-white/10">
+                  <div className="flex flex-wrap gap-2 text-[10px] text-neutral-500 pt-1 border-t border-neutral-100">
                     <span className="flex items-center">
                       <Clock className="w-3.5 h-3.5 mr-1 text-[#CD3134]" />
                       09:00 AM – 09:00 PM
@@ -429,17 +429,17 @@ export default function PreFooter() {
                       <MapPin className="w-4.5 h-4.5" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-white tracking-wide">
+                      <h4 className="text-xs font-bold text-neutral-900 tracking-wide">
                         Google Map Kolkata
                       </h4>
-                      <p className="text-[11px] text-white/50 mt-0.5 font-light leading-relaxed">
+                      <p className="text-[11px] text-warm-muted mt-0.5 font-light leading-relaxed">
                         Salt Lake Clinic: Infinity Benchmark, Sector V, Salt Lake City, Kolkata - 700091.
                       </p>
                     </div>
                   </div>
 
                   {/* Micro clinic details */}
-                  <div className="flex flex-wrap gap-2 text-[10px] text-white/50 pt-1 border-t border-white/10">
+                  <div className="flex flex-wrap gap-2 text-[10px] text-neutral-500 pt-1 border-t border-neutral-100">
                     <span className="flex items-center">
                       <Clock className="w-3.5 h-3.5 mr-1 text-[#CD3134]" />
                       10:00 AM – 08:30 PM
