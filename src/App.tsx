@@ -88,9 +88,7 @@ export default function App() {
             <SplitContent />
           </AnimatedSection>
 
-          <AnimatedSection delay={0.05}>
-            <MeetTeam />
-          </AnimatedSection>
+          <MeetTeam />
 
           <AnimatedSection delay={0.1}>
             <Testimonials />

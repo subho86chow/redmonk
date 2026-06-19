@@ -14,11 +14,23 @@ import { motion, useScroll, useTransform } from "motion/react";
 export default function ScrollStroke() {
   const { scrollYProgress } = useScroll();
 
-  // Top path draws its downward stroke from scroll 0% to 50%
-  const topPathLength = useTransform(scrollYProgress, [0, 0.5], [0, 1.5]);
+  // Adjusted scroll progress with a paused range.
+  // Sections: Hero + Services (0→0.22), StatsBanner → SplitContent → Team (0.22→0.68 paused),
+  //           Testimonials → PreFooter → Footer (0.68→1 resumes)
+  // During paused range the stroke freezes, then catches up after.
+  const adjustedProgress = useTransform(scrollYProgress, (p: number) => {
+    const pauseStart = 0.22;
+    const pauseEnd = 0.68;
+    if (p <= pauseStart) return (p / pauseStart) * 0.3;
+    if (p <= pauseEnd) return 0.3;
+    return 0.3 + ((p - pauseEnd) / (1 - pauseEnd)) * 0.7;
+  });
 
-  // Bottom path draws its downward stroke from scroll 50% to 100%
-  const bottomPathLength = useTransform(scrollYProgress, [0.5, 1], [0, 2]);
+  // Top path draws its downward stroke from progress 0→0.5
+  const topPathLength = useTransform(adjustedProgress, [0, 0.5], [0, 1.5]);
+
+  // Bottom path draws its downward stroke from progress 0.5→1
+  const bottomPathLength = useTransform(adjustedProgress, [0.5, 1], [0, 2]);
 
   return (
     <svg

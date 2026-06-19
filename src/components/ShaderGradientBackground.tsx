@@ -1,5 +1,7 @@
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 
+const ShaderGradientAny = ShaderGradient as any;
+
 export default function ShaderGradientBackground() {
   return (
     <ShaderGradientCanvas
@@ -12,9 +14,8 @@ export default function ShaderGradientBackground() {
       pixelDensity={2}
       fov={45}
     >
-<ShaderGradient
+<ShaderGradientAny
   animate="on"
-  axesHelper="off"
   brightness={0.7}
   cAzimuthAngle={18}
   cDistance={2.7}
