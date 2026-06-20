@@ -225,7 +225,7 @@ export default function MeetTeam() {
     <section
       id="team"
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center py-12 bg-transparent relative scroll-mt-14"
+      className="min-h-screen flex flex-col justify-center pt-[20vh] pb-12 bg-transparent relative scroll-mt-14"
     >
       <div className="w-full">
         
@@ -233,11 +233,11 @@ export default function MeetTeam() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2
             id="team-main-heading"
-            className="text-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight"
+            className="text-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Meet the Team
           </h2>
-          <p className="text-sm text-white/50 leading-relaxed font-light">
+          <p className="text-sm text-white/80 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             Our clinic combines advanced medicine with premium aesthetic design guidelines. Watch our team dynamic unfold in sync.
           </p>
         </div>

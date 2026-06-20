@@ -20,7 +20,7 @@ export default function Testimonials() {
   return (
     <section
       id="journal"
-      className="py-16 sm:py-24 bg-transparent scroll-mt-14"
+      className="pt-[20vh] pb-16 sm:pb-24 bg-transparent scroll-mt-14"
     >
       <div className="w-full">
         
@@ -28,11 +28,11 @@ export default function Testimonials() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2
             id="testimonials-main-heading"
-            className="text-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight"
+            className="text-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Aesthetic & Wellness Testimonials
           </h2>
-          <p className="text-sm text-white/50 leading-relaxed max-w-lg mx-auto">
+          <p className="text-sm text-white/80 leading-relaxed max-w-lg mx-auto font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             Real guest logs highlighting the safety standards and life-changing improvements in cognitive focus and youth retention.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function Testimonials() {
                 {/* Patient Quote / Review Text */}
                 <p
                   id={`testimonial-text-${index}`}
-                  className="text-xs sm:text-[13px] text-neutral-700 leading-relaxed font-light italic"
+                  className="text-xs sm:text-[13px] text-white leading-relaxed font-light italic"
                 >
                   "{review.text}"
                 </p>
@@ -88,7 +88,7 @@ export default function Testimonials() {
                   <div className="flex items-center space-x-1">
                     <span
                       id={`testimonial-author-${index}`}
-                      className="text-xs font-bold text-neutral-900"
+                      className="text-xs font-bold text-white"
                     >
                       {review.patientName}
                     </span>
@@ -96,12 +96,12 @@ export default function Testimonials() {
                   </div>
                   
                   {/* Verified Treatment Tag */}
-                  <span className="block text-[9.5px] font-mono text-primary-red/80 font-bold mt-0.5 uppercase tracking-wide">
+                  <span className="block text-[9.5px] font-mono text-white/90 font-bold mt-0.5 uppercase tracking-wide">
                     {review.treatment}
                   </span>
                 </div>
 
-                <span className="text-[10px] font-mono text-neutral-400">
+                <span className="text-[10px] font-mono text-white/70">
                   {review.date}
                 </span>
               </div>

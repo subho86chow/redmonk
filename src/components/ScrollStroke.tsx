@@ -14,7 +14,7 @@ export default function ScrollStroke() {
       fill="none"
       overflow="visible"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none mt-[30vh] sm:mt-0"
       preserveAspectRatio="xMidYMin meet"
     >
       <style>

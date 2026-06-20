@@ -43,10 +43,10 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
             <Activity className="w-5 h-5" />
           </div>
           <div className="hidden sm:flex flex-col">
-            <span className="text-display text-base font-bold tracking-tight text-white leading-none">
+            <span className="text-display text-base font-bold tracking-tight text-white leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
               RED MONK
             </span>
-            <span className="text-[8px] font-mono tracking-widest text-white/60 uppercase font-semibold">
+            <span className="text-[8px] font-mono tracking-widest text-white/60 uppercase font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.4)]">
               Wellness Clinic
             </span>
           </div>
@@ -124,7 +124,7 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onBookNowClick();
                   }}
-                  className="w-full text-center bg-cta-red hover:bg-deep-red text-white py-3 rounded-full text-sm font-semibold shadow-md cursor-pointer"
+                  className="w-full text-center bg-cta-red hover:bg-deep-red text-white py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-sm shadow-primary-red/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   Book Now!
                 </button>

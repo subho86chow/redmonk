@@ -12,14 +12,14 @@ export default function Hero({ onBookDripClick }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative pt-24 pb-16 lg:pt-36 lg:pb-28 bg-transparent overflow-hidden"
+      className="relative pt-[20vh] pb-16 lg:pb-28 bg-transparent overflow-hidden"
     >
       <div className="w-full">
         <div className="flex flex-col space-y-6 text-left">
           {/* Main Headline */}
           <h1
             id="hero-main-heading"
-            className="text-display text-5xl sm:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.95] text-white mt-10"
+            className="text-display text-5xl sm:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.95] text-white mt-[30vh] sm:mt-10 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]"
 
           >
             <span className="block">SADA</span>
@@ -27,12 +27,11 @@ export default function Hero({ onBookDripClick }: HeroProps) {
             <span className="block">RAHO</span>
           </h1>
 
-          {/* Horizontal Button Alignments */}
-          <div className="flex flex-wrap gap-4 pt-3" id="hero-button-group">
+          <div className="flex flex-wrap gap-3 pt-2" id="hero-button-group">
             <button
               id="hero-book-now-btn"
               onClick={onBookDripClick}
-              className="bg-cta-red hover:bg-deep-red text-white font-bold px-8 py-2 rounded-full text-sm sm:text-base tracking-wide shadow-sm shadow-primary-red/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer flex items-center space-x-2"
+              className="bg-cta-red hover:bg-deep-red text-white font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm tracking-wide shadow-sm shadow-primary-red/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer flex items-center space-x-2"
             >
               <span>Book Now</span>
             </button>
@@ -40,7 +39,7 @@ export default function Hero({ onBookDripClick }: HeroProps) {
             <button
               id="hero-watch-experience-btn"
               onClick={() => setIsVideoModalOpen(true)}
-              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-full text-sm sm:text-base tracking-wide transition-all duration-300 flex items-center justify-center space-x-2.5 cursor-pointer"
+              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-5 py-2.5 rounded-full text-xs sm:text-sm tracking-wide transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>Watch the Experience</span>
             </button>

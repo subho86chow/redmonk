@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-16 sm:py-24 bg-transparent relative scroll-mt-14"
+      className="pt-[20vh] pb-16 sm:pb-24 bg-transparent relative scroll-mt-14"
     >
       <div className="w-full">
         
@@ -35,11 +35,11 @@ export default function Services() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2
             id="services-heading"
-            className="text-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight"
+            className="text-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Our Services
           </h2>
-          <p className="text-sm sm:text-base text-white/50 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-white/80 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             Every clinical formulation in our repertoire is selected to maximize intracellular solubility and target active physiological pathways under medical surveillance.
           </p>
         </div>

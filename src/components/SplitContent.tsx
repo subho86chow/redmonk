@@ -17,7 +17,7 @@ export default function SplitContent() {
   return (
     <section
       id="iv-menu"
-      className="py-16 sm:py-24 bg-transparent scroll-mt-14"
+      className="pt-[20vh] pb-16 sm:pb-24 bg-transparent scroll-mt-14"
     >
       <div className="w-full">
         
@@ -31,7 +31,7 @@ export default function SplitContent() {
             <div className="flex flex-col space-y-2">
               <h3
                 id="popular-drips-title"
-                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight"
+                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
               >
                 Most Popular IV Drips
               </h3>
@@ -115,7 +115,7 @@ export default function SplitContent() {
             <div className="flex flex-col space-y-2">
               <h3
                 id="beauty-treatments-title"
-                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight"
+                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
               >
                 Featured Beauty Treatments
               </h3>
@@ -219,7 +219,7 @@ export default function SplitContent() {
               <button
                 id="explore-full-beauty-menu"
                 onClick={() => setIsDripCatalogOpen(true)}
-                className="w-full bg-white/40 hover:bg-white/60 backdrop-blur-md border border-[#EDB7AF]/40 text-[#CD3134] mt-6 py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold tracking-wide transition-all duration-300 flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm hover:shadow-[#CD3134]/10"
+                className="w-full bg-white/40 hover:bg-white/60 backdrop-blur-md border border-[#EDB7AF]/40 text-[#CD3134] mt-6 py-2.5 px-5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center space-x-1.5 cursor-pointer shadow-sm hover:shadow-[#CD3134]/10"
               >
                 <span>Explore full menu</span>
                 <ArrowRight className="w-4 h-4" />
@@ -422,7 +422,7 @@ export default function SplitContent() {
                       const el = document.getElementById("reserve-your-slot");
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="bg-[#CD3134] hover:bg-deep-red text-white py-2.5 px-5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md cursor-pointer"
+                    className="bg-[#CD3134] hover:bg-deep-red text-white py-2.5 px-5 rounded-full text-xs sm:text-sm font-bold shadow-sm shadow-primary-red/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                   >
                     Select & Book Drip
                   </button>

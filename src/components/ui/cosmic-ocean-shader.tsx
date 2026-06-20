@@ -32,6 +32,14 @@ export default function CosmicOceanShader() {
     }
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.domElement.style.margin = '0';
+    renderer.domElement.style.padding = '0';
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.position = 'absolute';
+    renderer.domElement.style.top = '0';
+    renderer.domElement.style.left = '0';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
 
     // ── Shaders ──────────────────────────────────────────────────
@@ -166,6 +174,8 @@ export default function CosmicOceanShader() {
         inset: 0,
         width: '100vw',
         height: '100vh',
+        margin: 0,
+        padding: 0,
         zIndex: 0,
         pointerEvents: 'none',
         overflow: 'hidden',

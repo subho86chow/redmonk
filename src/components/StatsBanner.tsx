@@ -21,7 +21,7 @@ export default function StatsBanner() {
   return (
     <section
       id="about"
-      className="py-16 sm:py-20 rounded-3xl relative scroll-mt-14 overflow-hidden"
+      className="pt-[20vh] pb-16 sm:pb-20 rounded-3xl relative scroll-mt-14 overflow-hidden"
     >
       {/* Section background video — autoplay, loop, muted */}
       <video
@@ -32,21 +32,8 @@ export default function StatsBanner() {
         className="absolute inset-0 w-full h-full object-cover rounded-3xl"
         src="/hero-video.webm"
       />
-      <div className="w-full p-10">
+      <div className="w-full p-10 !pt-20">
         
-        {/* Centered Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-40">
-          
-          <h2
-            id="stats-main-heading"
-            className="text-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight"
-          >
-            Why Red Monk Wellness?
-          </h2>
-          <p className="text-xs sm:text-sm text-white/50 mt-3 leading-relaxed">
-            We operate at the leading edge of functional cellular biology. Our protocols deliver high bioavailability with patient comfort at the core.
-          </p>
-        </div>
 
         {/* 4-column layout spanning the full width inside light-blush backdrop card */}
         <GlassCard
@@ -57,8 +44,8 @@ export default function StatsBanner() {
           className="p-8 sm:p-12 relative overflow-hidden"
         >
           <h2
-            id="stats-main-heading"
-            className="text-center pb-10 text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight"
+            id="stats-main-heading-inner"
+            className="text-center pb-10 text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Why Red Monk Wellness?
           </h2>
