@@ -1,12 +1,64 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 export default function ScrollStroke() {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
+
+  const [dimensions, setDimensions] = useState({
+    scale: 1,
+    documentHeight: 0,
+    windowHeight: 0,
+    yStart: 0,
+    scrollLimit: 1000,
+  });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      
+      const scale = w / 891.89; // base SVG viewBox width
+      const yStart = w < 640 ? 0.3 * h : 0; // match 30vh offset on mobile
+      const svgScreenHeight = 4530 * scale;
+      const maxScroll = docHeight - h;
+      const scrollLimit = Math.min(maxScroll, yStart + svgScreenHeight);
+
+      setDimensions({
+        scale,
+        documentHeight: docHeight,
+        windowHeight: h,
+        yStart,
+        scrollLimit: scrollLimit > yStart ? scrollLimit : yStart + 1,
+      });
+    };
+
+    updateDimensions();
+    
+    window.addEventListener("resize", updateDimensions);
+    window.addEventListener("scroll", updateDimensions);
+    
+    const timer1 = setTimeout(updateDimensions, 500);
+    const timer2 = setTimeout(updateDimensions, 2000);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+      window.removeEventListener("scroll", updateDimensions);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
 
   // Reveal the flawless ribbon path vertically from top to bottom
-  const maskHeight = useTransform(scrollYProgress, [0, 1], [0, 4530]);
+  const maskHeight = useTransform(scrollY, (y) => {
+    const { yStart, scrollLimit } = dimensions;
+    if (y <= yStart) return 0;
+    if (y >= scrollLimit) return 4530;
+    const progress = (y - yStart) / (scrollLimit - yStart);
+    return progress * 4530;
+  });
 
   return (
     <svg
