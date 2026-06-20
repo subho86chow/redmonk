@@ -34,6 +34,19 @@ export default function StatsBanner() {
       />
       <div className="w-full p-10 !pt-20">
         
+        {/* Centered Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-40">
+          
+          <h2
+            id="stats-main-heading"
+            className="text-display text-xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+          >
+            Why Red Monk Wellness?
+          </h2>
+          <p className="text-xs sm:text-sm text-white/80 mt-3 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+            We operate at the leading edge of functional cellular biology. Our protocols deliver high bioavailability with patient comfort at the core.
+          </p>
+        </div>
 
         {/* 4-column layout spanning the full width inside light-blush backdrop card */}
         <GlassCard
@@ -45,7 +58,7 @@ export default function StatsBanner() {
         >
           <h2
             id="stats-main-heading-inner"
-            className="text-center pb-10 text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+            className="text-center pb-10 text-xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Why Red Monk Wellness?
           </h2>

@@ -73,7 +73,7 @@ export default function PreFooter() {
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-white/70">
                 Reserve Your Slot
               </span>
-              <h3 className="text-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+              <h3 className="text-display text-xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
                 Schedule Infusion
               </h3>
               <p className="text-xs text-white/80 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
@@ -274,7 +274,7 @@ export default function PreFooter() {
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-white/70">
                 Social Channels
               </span>
-              <h3 className="text-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+              <h3 className="text-display text-xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
                 Our Platforms
               </h3>
               <p className="text-xs text-white/80 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
@@ -348,7 +348,7 @@ export default function PreFooter() {
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-white/70">
                 Location Network
               </span>
-              <h3 className="text-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+              <h3 className="text-display text-xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
                 Experience Clinics
               </h3>
               <p className="text-xs text-white/80 leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">

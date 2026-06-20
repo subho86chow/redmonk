@@ -19,7 +19,7 @@ export default function Hero({ onBookDripClick }: HeroProps) {
           {/* Main Headline */}
           <h1
             id="hero-main-heading"
-            className="text-display text-5xl sm:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.95] text-white mt-[30vh] sm:mt-10 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]"
+            className="text-display text-4xl sm:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.95] text-white mt-[30vh] sm:mt-10 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]"
 
           >
             <span className="block">SADA</span>

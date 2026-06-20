@@ -28,11 +28,11 @@ export default function Testimonials() {
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2
             id="testimonials-main-heading"
-            className="text-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+            className="text-display text-2xl sm:text-4xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
           >
             Aesthetic & Wellness Testimonials
           </h2>
-          <p className="text-sm text-white/80 leading-relaxed max-w-lg mx-auto font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+          <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-lg mx-auto font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
             Real guest logs highlighting the safety standards and life-changing improvements in cognitive focus and youth retention.
           </p>
         </div>

@@ -56,7 +56,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative text-neutral-800 antialiased flex flex-col selection:bg-primary-red/10 selection:text-primary-red">
+    <div className="relative text-neutral-800 antialiased flex flex-col selection:bg-primary-red/10 selection:text-primary-red overflow-x-hidden">
       {/* Full-page shader background, fixed behind everything */}
       <CosmicOceanShader />
 

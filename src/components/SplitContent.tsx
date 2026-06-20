@@ -31,7 +31,7 @@ export default function SplitContent() {
             <div className="flex flex-col space-y-2">
               <h3
                 id="popular-drips-title"
-                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+                className="text-display text-xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
               >
                 Most Popular IV Drips
               </h3>
@@ -115,7 +115,7 @@ export default function SplitContent() {
             <div className="flex flex-col space-y-2">
               <h3
                 id="beauty-treatments-title"
-                className="text-display text-2xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+                className="text-display text-xl sm:text-3.5xl font-extrabold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
               >
                 Featured Beauty Treatments
               </h3>
