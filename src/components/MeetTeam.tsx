@@ -225,9 +225,9 @@ export default function MeetTeam() {
     <section
       id="team"
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center py-12 bg-transparent border-t border-[#EDB7AF]/25 relative scroll-mt-14"
+      className="min-h-screen flex flex-col justify-center py-12 bg-transparent relative scroll-mt-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         
         {/* Centered Headline */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">

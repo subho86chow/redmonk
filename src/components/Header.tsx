@@ -30,8 +30,8 @@ export default function Header({ onBookNowClick, activeSection }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-4 left-0 w-full z-50 px-4">
-      <div className="max-w-6xl mx-auto relative flex items-center justify-center h-12">
+    <header className="fixed top-4 left-0 w-full z-50 px-[5vw]">
+      <div className="w-full relative flex items-center justify-center h-12">
 
         {/* Logo — absolute left, doesn't affect nav centering */}
         <a

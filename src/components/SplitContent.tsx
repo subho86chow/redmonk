@@ -19,7 +19,7 @@ export default function SplitContent() {
       id="iv-menu"
       className="py-16 sm:py-24 bg-transparent scroll-mt-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         
         {/* Main Grid Wrapper (Desktop 65% left, 35% right Split) */}
         <div id="split-asymmetrical-grid" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10">

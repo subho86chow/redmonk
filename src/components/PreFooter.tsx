@@ -61,9 +61,9 @@ export default function PreFooter() {
   return (
     <section
       id="reserve-your-slot"
-      className="py-16 sm:py-24 bg-transparent border-t border-light-blush/25 relative scroll-mt-14"
+      className="py-16 sm:py-24 bg-transparent relative scroll-mt-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* LEFT COLUMN: Reserve Your Slot (Contact Form) */}

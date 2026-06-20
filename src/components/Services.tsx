@@ -27,9 +27,9 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-16 sm:py-24 bg-transparent border-y border-[#EDB7AF]/20 relative scroll-mt-14"
+      className="py-16 sm:py-24 bg-transparent relative scroll-mt-14"
     >
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         
         {/* Centered Headline */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

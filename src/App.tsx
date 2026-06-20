@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -8,7 +8,7 @@ import MeetTeam from "./components/MeetTeam";
 import Testimonials from "./components/Testimonials";
 import PreFooter from "./components/PreFooter";
 import Footer from "./components/Footer";
-import ShaderGradientBackground from "./components/ShaderGradientBackground";
+import CosmicOceanShader from "./components/ui/cosmic-ocean-shader";
 import ScrollStroke from "./components/ScrollStroke";
 import AnimatedSection from "./components/AnimatedSection";
 
@@ -57,10 +57,8 @@ export default function App() {
 
   return (
     <div className="relative text-neutral-800 antialiased flex flex-col selection:bg-primary-red/10 selection:text-primary-red">
-      {/* Full-page shader gradient background, fixed behind everything */}
-      <Suspense fallback={<div className="fixed inset-0 bg-[#A62125]" />}>
-        <ShaderGradientBackground />
-      </Suspense>
+      {/* Full-page shader background, fixed behind everything */}
+      <CosmicOceanShader />
 
       {/* Content layered above the gradient */}
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -71,7 +69,7 @@ export default function App() {
         <Header onBookNowClick={handleBookNowScroll} activeSection={activeSection} />
 
         {/* Main Structural Flow */}
-        <main className="flex-grow">
+        <main className="flex-grow px-[5vw]">
           <AnimatedSection aboveFold delay={0.2}>
             <Hero onBookDripClick={handleBookNowScroll} />
           </AnimatedSection>

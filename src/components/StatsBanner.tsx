@@ -17,18 +17,11 @@ const itemVariants = {
 };
 
 export default function StatsBanner() {
-  // Map icons to statistical items to add rich visual details
-  const featureIcons = [
-    <ShieldCheck className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
-    <Crosshair className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
-    <Sparkles className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
-    <Award className="w-5 h-5 text-white group-hover:text-white/80 transition-colors" />,
-  ];
 
   return (
     <section
       id="about"
-      className="py-16 sm:py-20 relative border-y border-[#EDB7AF]/25 scroll-mt-14 overflow-hidden"
+      className="py-16 sm:py-20 rounded-3xl relative scroll-mt-14 overflow-hidden"
     >
       {/* Section background video — autoplay, loop, muted */}
       <video
@@ -36,10 +29,10 @@ export default function StatsBanner() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover rounded-3xl"
         src="/hero-video.webm"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full p-10">
         
         {/* Centered Heading */}
         <div className="text-center max-w-2xl mx-auto mb-40">

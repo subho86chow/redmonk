@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer id="main-clinic-footer" className="relative bg-black/10 backdrop-blur-xl text-white/60 border-t border-white/10 font-sans mt-auto rounded-t-[64px]">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="w-full px-[5vw] py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           
           {/* Logo & Manifesto block */}
